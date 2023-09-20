@@ -14,15 +14,17 @@ def dortmund_fan_quiz():
         "Michael Zorc",
         "1997",
         "Signal Iduna Park",
-        "Marco Reus",
+        "Emre Can",
         "Yellow and Black"
     ]
 
     score = 0
 
     for i, question in enumerate(questions, start=1):
-        answer = input(f"Question {i}: {question}\nYour Answer: ").strip()
-        if answer.lower() == correct_answers[i - 1].lower():
+        answer = input(f"Question {i}: {question}\nYour Answer: ").strip().lower()
+        
+        # Check if the answer contains both "yellow" and "black"
+        if "yellow" in answer and "black" in answer:
             print("Correct!\n")
             score += 1
         else:
